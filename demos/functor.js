@@ -22,3 +22,9 @@ Container.prototype.map = function (f) {
 
 // console.log(Container.of(3).map(x => x + 2))
 // console.log(Container.of('hello, world.').map(s => s.toUpperCase()))
+const compose = (f, g) => x => f(g(x))
+
+const r1 = Container.of(3).map(x => x + 2).map(x => x * 3)
+const r2 = Container.of(3).map(compose(x => x * 3, x => x + 2))
+
+console.log(r1, r2)
