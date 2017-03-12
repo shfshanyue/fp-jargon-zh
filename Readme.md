@@ -71,6 +71,8 @@ const arity = sum.length
 console.log(arity)        // 2
 ```
 
+[示例](https://github.com/shfshanyue/fp-jargon-zh/blob/master/demos/arity.js)
+
 <div id="higher-order-functions-hof"></div>
 ## 高阶函数 (Higher-Order Function / HOF)
 以函数为参数或/和返回值。
@@ -82,6 +84,8 @@ const is = (type) => (x) => Object(x) instanceof type
 
 filter(is(Number), [0, '1', 2, null]) // 0, 2
 ```
+
+[示例](https://github.com/shfshanyue/fp-jargon-zh/blob/master/demos/hoc.js)
 
 <div id="partical-application"></div>
 ## 偏函数 (Partial Function)
@@ -112,6 +116,8 @@ const add1More = add3.bind(null, 2, 3)
 
 偏函数应用通过对复杂的函数填充一部分数据来构成一个简单的函数。柯里化通过偏函数实现。
 
+[示例](https://github.com/shfshanyue/fp-jargon-zh/blob/master/demos/partial.js)
+
 <div id="currying"></div>
 ## 柯里化 (Currying)
 将一个多元函数转变为一元函数的过程。
@@ -129,6 +135,8 @@ const add2 = curriedSum(2)
 add2(10)     // 12
 ```
 
+[示例](https://github.com/shfshanyue/fp-jargon-zh/blob/master/demos/curry.js)
+
 <div id="auto-currying"></div>
 ## 自动柯里化 (Auto Currying)
 `lodash`，`understore` 和 `ramda` 有 `curry` 函数可以自动完成柯里化。
@@ -143,6 +151,8 @@ curriedAdd(1)(2)   // 3
 curriedAdd(1)      // (y) => 1 + y
 ```
 
+[示例](https://github.com/shfshanyue/fp-jargon-zh/blob/master/demos/curry2.js)
+
 #### 进一步阅读
 + [Favoring Curry](http://fr.umio.us/favoring-curry/)
 + [Hey Underscore, You're Doing It Wrong!](https://www.youtube.com/watch?v=m3svKOdZijA)
@@ -156,6 +166,8 @@ const compose = (f, g) => (a) => f(g(a))    // 定义
 const floorAndToString = compose((val) => val.toString(), Math.floor) // 使用
 floorAndToString(12.12)   // '12'
 ```
+
+[示例](https://github.com/shfshanyue/fp-jargon-zh/blob/master/demos/compose.js)
 
 <div id="continuation"></div>
 ## Continuation
@@ -223,6 +235,8 @@ greeting // "Hi, Brianne"
 
 以上实例中，函数修改了外部状态。
 
+[示例](https://github.com/shfshanyue/fp-jargon-zh/blob/master/demos/purity.js)
+
 <div id="side-effects"></div>
 ## 副作用 (Side effects)
 如果函数与外部可变状态进行交互，则它是有副作用的。
@@ -234,6 +248,8 @@ const differentEveryTime = new Date()
 ``` js
 console.log('IO is a side effect!')
 ```
+
+[示例](https://github.com/shfshanyue/fp-jargon-zh/blob/master/demos/sideEffect.js)
 
 <div id="idemponent"></div>
 ## 幂等性 (Idempotent)
@@ -250,6 +266,8 @@ Math.abs(Math.abs(10))
 ``` js
 sort(sort(sort([2, 1])))
 ```
+
+[示例](https://github.com/shfshanyue/fp-jargon-zh/blob/master/demos/idempotent.js)
 
 <div id="point-free-style"></div>
 ## Point-Free 风格 (Point-Free Style)
@@ -271,6 +289,8 @@ const incrementAll2 = map(add(1))
 
 Point-Free 风格的函数就像平常的赋值，不使用 `function` 或者 `=>`。
 
+[示例](https://github.com/shfshanyue/fp-jargon-zh/blob/master/demos/pointFree.js)
+
 <div id="predicate"></div>
 ## 谓词 (Predicate)
 根据输入返回 true 或 false。通常用在 Array.prototype.filter 的回调函数中。
@@ -280,6 +300,8 @@ const predicate = (a) => a > 2
 
 ;[1, 2, 3, 4].filter(predicate)
 ```
+
+[示例](https://github.com/shfshanyue/fp-jargon-zh/blob/master/demos/predicate.js)
 
 <div id="contract"></div>
 ## 契约 (Contracts)
@@ -296,6 +318,8 @@ const addOne = (num) => contract(num) && num + 1
 addOne(2)
 addOne('hello') // Error
 ```
+
+[示例](https://github.com/shfshanyue/fp-jargon-zh/blob/master/demos/contracts.js)
 
 <div id="guarded-functions"></div>
 ## Guarded Functions
@@ -328,6 +352,8 @@ Object.freeze({name: 'John', age: 30})
 undefined
 ```
 
+[示例](https://github.com/shfshanyue/fp-jargon-zh/blob/master/demos/value.js)
+
 <div id="constant"></div>
 ## 常量 (Constant)
 一旦定义不可重新赋值。
@@ -344,6 +370,8 @@ const john = Object.freeze({name: 'John', age: 30})
 ``` js
 john.age + five === ({name: 'John', age: 30}).age + (5)
 ```
+
+[示例](https://github.com/shfshanyue/fp-jargon-zh/blob/master/demos/constant.js)
 
 <div id="functor"></div>
 ## 函子 (Functor)
@@ -373,6 +401,8 @@ const g = x => x * 2
 ;[1, 2, 3].map(g).map(f)
 ```
 
+[示例](https://github.com/shfshanyue/fp-jargon-zh/blob/master/demos/functor.js)
+
 <div id="pointed-functor"></div>
 ### Pointed Functor
 一个实现了 of 函数的对象。
@@ -395,9 +425,11 @@ TODO
 const greet = () => 'hello, world.'
 ```
 
+<div id="equaltional-reasoning"></div>
 ## Equational Reasoning
 TODO
 
+<div id="lambda"></div>
 ## 匿名函数 (Lambda)
 匿名函数被视作一个值
 
@@ -421,9 +453,11 @@ TODO
 const add1 = (a) => a + 1
 ```
 
+<div id="lambda-caculus"></div>
 ## Lambda Caculus
 数学的一个分支，使用函数创造 [通过计算模型](https://en.wikipedia.org/wiki/Lambda_calculus)
 
+<div id="lazy-evaluation"></div>
 ## 惰性求值 (Lazy evaluation)
 按需求值机制，只有当需要计算所得值时才会计算。
 
@@ -438,6 +472,9 @@ const randIter = rand()
 randIter.next()
 ```
 
+[示例](https://github.com/shfshanyue/fp-jargon-zh/blob/master/demos/functor.js)
+
+<div id="monoid"></div>
 ## Monoid
 一个对象拥有一个函数用来连接相同类型的对象。
 
@@ -488,6 +525,8 @@ foo 是只带一个参数的任意函数
 compose(foo, identity) ≍ compose(identity, foo) ≍ foo
 ```
 
+[示例](https://github.com/shfshanyue/fp-jargon-zh/blob/master/demos/monoid.js)
+
 <div id="monad"></div>
 ## Monad
 拥有 `of` 和 `chain` 函数的对象。`chain` 很像 `map`， 除了用来铺平嵌套数据。
@@ -505,6 +544,8 @@ Array.prototype.chain = function (f) {
 ```
 
 在有些语言中，`of` 也称为 `return`，`chain` 也称为 `flatmap` 与 `bind`。
+
+[示例](https://github.com/shfshanyue/fp-jargon-zh/blob/master/demos/monad.js)
 
 <div id="comonad"></div>
 ## Comonad
@@ -526,6 +567,8 @@ const CoIdentity = (v) => ({
 CoIdentity(1).extract()
 CoIdentity(1).extend(x => x.extract() + 1)   # CoIdentity(2)
 ```
+
+[示例](https://github.com/shfshanyue/fp-jargon-zh/blob/master/demos/comonad.js)
 
 <div id="applicative-functor"></div>
 ## Applicative Functor
@@ -559,6 +602,8 @@ const partiallyAppliedAdds = [add].ap(arg1) // [(y) => 1 + y, (y) => 3 + y]
 ``` js
 partiallyAppliedAdds.ap(arg2) // [5, 6, 7, 8]
 ```
+
+[示例](https://github.com/shfshanyue/fp-jargon-zh/blob/master/demos/applicativeFunctor.js)
 
 <div id="morphism"></div>
 ## 态射 (Morphism)
@@ -615,6 +660,8 @@ Array.prototype.equals = function (arr) {
 ;[1, 2].equals([3, 4])   // false
 ```
 
+[示例](https://github.com/shfshanyue/fp-jargon-zh/blob/master/demos/setoid.js)
+
 <div id="semigroup"></div>
 ## 半群 (Semigroup)
 一个拥有 `concat` 函数的对象。`concat` 可以连接相同类型的两个对象。
@@ -622,6 +669,8 @@ Array.prototype.equals = function (arr) {
 ``` js
 ;[1].concat([2]) // [1, 2]
 ```
+
+[示例](https://github.com/shfshanyue/fp-jargon-zh/blob/master/demos/semigroup.js)
 
 <div id="foldable"></div>
 ## Foldable
@@ -746,6 +795,8 @@ getNestedPrice({item: {price: 9.99}}) // Some(9.99)
 ```
 
 在其它的一些地方，`Option` 也称为 `Maybe`，`Some` 也称为 `Just`，`None` 也称为 `Nothing`。
+
+[示例](https://github.com/shfshanyue/fp-jargon-zh/blob/master/demos/options.js)
 
 <div id="functional-programing-libraries-in-javascript"></div>
 ## 在 js 中的函数式编程库
