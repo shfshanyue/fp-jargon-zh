@@ -796,7 +796,8 @@ getNestedPrice({item: {price: 9.99}}) // Some(9.99)
 
 在其它的一些地方，`Option` 也称为 `Maybe`，`Some` 也称为 `Just`，`None` 也称为 `Nothing`。
 
-[示例](https://github.com/shfshanyue/fp-jargon-zh/blob/master/demos/options.js)
+[示例 option.js](https://github.com/shfshanyue/fp-jargon-zh/blob/master/demos/option.js)
+[示例 maybe.js](https://github.com/shfshanyue/fp-jargon-zh/blob/master/demos/maybe.js)
 
 <div id="functional-programing-libraries-in-javascript"></div>
 ## 在 js 中的函数式编程库
