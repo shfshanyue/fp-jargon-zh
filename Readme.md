@@ -34,7 +34,7 @@
 * [值 (Value)](#value)
 * [常亮 (Constant)](#constant)
 * [函子 (Functor)](#functor)
-  * [恒等性 (Preserves identity)](#preserves-identity)
+  * [一致性 (Preserves identity)](#preserves-identity)
   * [组合性 (Composable)](#composable)
 * [Pointed Functor](#pointed-functor)
 * [Lift](#lift)
@@ -349,12 +349,14 @@ john.age + five === ({name: 'John', age: 30}).age + (5)
 ## 函子 (Functor)
 一个实现了map 函数的对象，map 会遍历对象中的每个值并生成一个新的对象。遵守两个准则
 
+<div id="preserves-identity"></div>
 ### 一致性 (Preserves identity)
 
 ``` js
 object.map(x => x) ≍ object
 ```
 
+<div id="composable"></div>
 ### 组合性 (Composable)
 
 ``` js
@@ -385,8 +387,8 @@ Array.of(1)
 ## Lift
 TODO
 
-<div id="id">referential-transparency</div>
-## (引用透明性) Referential Transparency
+<div id="referential-transparency"></div>
+## 引用透明性 (Referential Transparency)
 一个表达式能够被它的值替代而不改变程序的行为成为引用透明。
 
 ``` js
