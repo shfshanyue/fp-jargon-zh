@@ -5,7 +5,7 @@ Array.prototype.chain = function (f) {
 // ['cat', 'dog', 'fish', 'bird']
 const a = Array.of('cat,dog', 'fish,bird').chain(s => s.split(','))
 
-// Derivations
+// Derived from chain and of
 const animals = Array.of('cat,dog', 'fish,bird')
 const f = s => s.split(',')
 

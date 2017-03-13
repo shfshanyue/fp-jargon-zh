@@ -21,7 +21,13 @@ const r6 = arg2.map(add).ap(arg1)
 
 console.log(r3, r4, r5, r6)
 
-// const r7 = [add].ap([mult].ap(arg1.map(x => x)))
-// const r8 = [add].ap([mult]).ap(arg1)
+// derived from chain
+Array.prototype.chain = function (f) {
+  return this.reduce((acc, it) => acc.concat(f(it)), [])  
+}
 
-// console.log(r7, r8)
+const adds = [x => x + 1, x => x * 2]
+const r7 = adds.ap(arg2)
+const r8 = adds.chain(f => arg2.chain(f))
+
+console.log(r7, r8)
