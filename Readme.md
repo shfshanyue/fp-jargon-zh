@@ -61,6 +61,7 @@
 * [函数式编程库](#functional-programming-libraries-in-javascript)
 
 <div id="arity"></div>
+
 ## Arity
 函数参数的个数。来自于单词 unary, binary, ternary 等等。这个单词是由 -ary 与 -ity 两个后缀拼接而成。例如，一个带有两个参数的函数被称为二元函数或者它的 arity 是2。它也被那些更喜欢希腊词根而非拉丁词根的人称为 `dyadic`。同样地，带有可变数量参数的函数被称为 `variadic`，而二元函数只能带两个参数。
 
@@ -74,6 +75,7 @@ console.log(arity)        // 2
 [示例](https://github.com/shfshanyue/fp-jargon-zh/blob/master/demos/arity.js)
 
 <div id="higher-order-functions-hof"></div>
+
 ## 高阶函数 (Higher-Order Function / HOF)
 以函数为参数或/和返回值。
 
@@ -88,6 +90,7 @@ filter(is(Number), [0, '1', 2, null]) // 0, 2
 [示例](https://github.com/shfshanyue/fp-jargon-zh/blob/master/demos/hoc.js)
 
 <div id="partical-application"></div>
+
 ## 偏函数 (Partial Function)
 对原始函数预设参数作为一个新的函数。
 
@@ -119,6 +122,7 @@ const add1More = add3.bind(null, 2, 3)
 [示例](https://github.com/shfshanyue/fp-jargon-zh/blob/master/demos/partial.js)
 
 <div id="currying"></div>
+
 ## 柯里化 (Currying)
 将一个多元函数转变为一元函数的过程。
 每当函数被调用时，它仅仅接收一个参数并且返回带有一个参数的函数，直到传递完所有的参数。
@@ -138,6 +142,7 @@ add2(10)     // 12
 [示例](https://github.com/shfshanyue/fp-jargon-zh/blob/master/demos/curry.js)
 
 <div id="auto-currying"></div>
+
 ## 自动柯里化 (Auto Currying)
 `lodash`，`understore` 和 `ramda` 有 `curry` 函数可以自动完成柯里化。
 
@@ -158,6 +163,7 @@ curriedAdd(1)      // (y) => 1 + y
 + [Hey Underscore, You're Doing It Wrong!](https://www.youtube.com/watch?v=m3svKOdZijA)
 
 <div id="function-composition"></div>
+
 ## 函数组合 (Function Composing) 
 接收多个函数作为参数，从右到左，一个函数的输入为另一个函数的输出。
 
@@ -170,6 +176,7 @@ floorAndToString(12.12)   // '12'
 [示例](https://github.com/shfshanyue/fp-jargon-zh/blob/master/demos/compose.js)
 
 <div id="continuation"></div>
+
 ## Continuation
 在一个程序执行的任意时刻，尚未执行的代码称为 Continuation。
 
@@ -201,6 +208,7 @@ readFileAsync('path/to/file', (err, response) => {
 ```
 
 <div id="purity"></div>
+
 ## 纯函数 (Purity)
 输出仅由输入决定，且不产生副作用。
 
@@ -238,6 +246,7 @@ greeting // "Hi, Brianne"
 [示例](https://github.com/shfshanyue/fp-jargon-zh/blob/master/demos/purity.js)
 
 <div id="side-effects"></div>
+
 ## 副作用 (Side effects)
 如果函数与外部可变状态进行交互，则它是有副作用的。
 
@@ -252,6 +261,7 @@ console.log('IO is a side effect!')
 [示例](https://github.com/shfshanyue/fp-jargon-zh/blob/master/demos/sideEffect.js)
 
 <div id="idemponent"></div>
+
 ## 幂等性 (Idempotent)
 如果一个函数执行多次皆返回相同的结果，则它是幂等性的。
 
@@ -270,6 +280,7 @@ sort(sort(sort([2, 1])))
 [示例](https://github.com/shfshanyue/fp-jargon-zh/blob/master/demos/idempotent.js)
 
 <div id="point-free-style"></div>
+
 ## Point-Free 风格 (Point-Free Style)
 定义函数时，不显式地指出函数所带参数。这种风格通常需要柯里化或者高阶函数。也叫 Tacit programming。
 
@@ -292,6 +303,7 @@ Point-Free 风格的函数就像平常的赋值，不使用 `function` 或者 `=
 [示例](https://github.com/shfshanyue/fp-jargon-zh/blob/master/demos/pointFree.js)
 
 <div id="predicate"></div>
+
 ## 谓词 (Predicate)
 根据输入返回 true 或 false。通常用在 Array.prototype.filter 的回调函数中。
 
@@ -304,6 +316,7 @@ const predicate = (a) => a > 2
 [示例](https://github.com/shfshanyue/fp-jargon-zh/blob/master/demos/predicate.js)
 
 <div id="contract"></div>
+
 ## 契约 (Contracts)
 契约保证了函数或者表达式在运行时的行为。当违反契约时，将抛出一个错误。
 
@@ -322,10 +335,12 @@ addOne('hello') // Error
 [示例](https://github.com/shfshanyue/fp-jargon-zh/blob/master/demos/contracts.js)
 
 <div id="guarded-functions"></div>
+
 ## Guarded Functions
 TODO
 
 <div id="category"></div>
+
 ## 范畴 (Category)
 在范畴论中，范畴是指对象集合及它们之间的态射 (morphism)。在编程中，数据类型作为对象，函数作为态射。
 
@@ -341,6 +356,7 @@ TODO
 + [Category Theory for Programmers](https://bartoszmilewski.com/2014/10/28/category-theory-for-programmers-the-preface/)
 
 <div id="value"></div>
+
 ## 值 (Value)
 赋值给变量的值称作 Value。
 
@@ -355,6 +371,7 @@ undefined
 [示例](https://github.com/shfshanyue/fp-jargon-zh/blob/master/demos/value.js)
 
 <div id="constant"></div>
+
 ## 常量 (Constant)
 一旦定义不可重新赋值。
 
@@ -374,10 +391,12 @@ john.age + five === ({name: 'John', age: 30}).age + (5)
 [示例](https://github.com/shfshanyue/fp-jargon-zh/blob/master/demos/constant.js)
 
 <div id="functor"></div>
+
 ## 函子 (Functor)
 一个实现了map 函数的对象，map 会遍历对象中的每个值并生成一个新的对象。遵守两个准则
 
 <div id="preserves-identity"></div>
+
 ### 一致性 (Preserves identity)
 
 ``` js
@@ -385,6 +404,7 @@ object.map(x => x) ≍ object
 ```
 
 <div id="composable"></div>
+
 ### 组合性 (Composable)
 
 ``` js
@@ -404,6 +424,7 @@ const g = x => x * 2
 [示例](https://github.com/shfshanyue/fp-jargon-zh/blob/master/demos/functor.js)
 
 <div id="pointed-functor"></div>
+
 ### Pointed Functor
 一个实现了 of 函数的对象。
 
@@ -414,10 +435,12 @@ Array.of(1)
 ```
 
 <div id="lift"></div>
+
 ## Lift
 TODO
 
 <div id="referential-transparency"></div>
+
 ## 引用透明性 (Referential Transparency)
 一个表达式能够被它的值替代而不改变程序的行为成为引用透明。
 
@@ -426,10 +449,12 @@ const greet = () => 'hello, world.'
 ```
 
 <div id="equaltional-reasoning"></div>
+
 ## Equational Reasoning
 TODO
 
 <div id="lambda"></div>
+
 ## 匿名函数 (Lambda)
 匿名函数被视作一个值
 
@@ -454,10 +479,12 @@ const add1 = (a) => a + 1
 ```
 
 <div id="lambda-caculus"></div>
+
 ## Lambda Caculus
 数学的一个分支，使用函数创造 [通过计算模型](https://en.wikipedia.org/wiki/Lambda_calculus)
 
 <div id="lazy-evaluation"></div>
+
 ## 惰性求值 (Lazy evaluation)
 按需求值机制，只有当需要计算所得值时才会计算。
 
@@ -475,6 +502,7 @@ randIter.next()
 [示例](https://github.com/shfshanyue/fp-jargon-zh/blob/master/demos/functor.js)
 
 <div id="monoid"></div>
+
 ## Monoid
 一个对象拥有一个函数用来连接相同类型的对象。
 
@@ -528,6 +556,7 @@ compose(foo, identity) ≍ compose(identity, foo) ≍ foo
 [示例](https://github.com/shfshanyue/fp-jargon-zh/blob/master/demos/monoid.js)
 
 <div id="monad"></div>
+
 ## Monad
 拥有 `of` 和 `chain` 函数的对象。`chain` 很像 `map`， 除了用来铺平嵌套数据。
 
@@ -548,6 +577,7 @@ Array.prototype.chain = function (f) {
 [示例](https://github.com/shfshanyue/fp-jargon-zh/blob/master/demos/monad.js)
 
 <div id="comonad"></div>
+
 ## Comonad
 拥有 `extract` 与 `extend` 函数的对象。
 
@@ -571,6 +601,7 @@ CoIdentity(1).extend(x => x.extract() + 1)   # CoIdentity(2)
 [示例](https://github.com/shfshanyue/fp-jargon-zh/blob/master/demos/comonad.js)
 
 <div id="applicative-functor"></div>
+
 ## Applicative Functor
 一个拥有 ap 函数的对象。
 
@@ -606,10 +637,12 @@ partiallyAppliedAdds.ap(arg2) // [5, 6, 7, 8]
 [示例](https://github.com/shfshanyue/fp-jargon-zh/blob/master/demos/applicativeFunctor.js)
 
 <div id="morphism"></div>
+
 ## 态射 (Morphism)
 一个变形的函数。
 
 <div id="endomophism"></div>
+
 ### 自同态 (Endomorphism)
 输入输出是相同类型的函数。
 
@@ -622,6 +655,7 @@ const decrement = (x) => x - 1
 ```
 
 <div id="isomorphism"></div>
+
 ### 同构 (Isomorphism)
 不用类型对象的变形，保持结构并且不丢失数据。
 
@@ -639,6 +673,7 @@ pairToCoords(coordsToPair({x: 1, y: 2})) // {x: 1, y: 2}
 ```
 
 <div id="setoid"></div>
+
 ## Setoid
 拥有 `equals` 函数的对象。`equals` 可以用来和其它对象比较。
 
@@ -663,6 +698,7 @@ Array.prototype.equals = function (arr) {
 [示例](https://github.com/shfshanyue/fp-jargon-zh/blob/master/demos/setoid.js)
 
 <div id="semigroup"></div>
+
 ## 半群 (Semigroup)
 一个拥有 `concat` 函数的对象。`concat` 可以连接相同类型的两个对象。
 
@@ -673,6 +709,7 @@ Array.prototype.equals = function (arr) {
 [示例](https://github.com/shfshanyue/fp-jargon-zh/blob/master/demos/semigroup.js)
 
 <div id="foldable"></div>
+
 ## Foldable
 一个拥有 `reduce` 函数的对象。`reduce` 可以把一种类型的对象转化为另一种类型。
 
@@ -682,10 +719,12 @@ sum([1, 2, 3])        // 6
 ```
 
 <div id="traversable"></div>
+
 ## Traversable
 TODO
 
 <div id="type-signatures"></div>
+
 ## 类型签名 (Type Signatures)
 通常 js 会在注释中指出参数与返回值的类型。
 
@@ -714,6 +753,7 @@ const map = (f) => (list) => list.map(f)
 ```
 
 <div id="union-type"></div>
+
 ## 联合类型 (Union Type)
 连接不同的数据类型。
 
@@ -738,6 +778,7 @@ add('Foo', 'Bar') // Returns string "FooBar"
 + [daggy](https://github.com/fantasyland/daggy)
 
 <div id="product-type"></div>
+
 ## Product type
 用一种你可能更熟悉的方式把数据类型联合起来
 
@@ -749,6 +790,7 @@ const point = (x, y) => ({x: x, y: y})
 又见 [Set theory](https://en.wikipedia.org/wiki/Set_theory)
 
 <div id="option"></div>
+
 ## Option
 Option 是一种联合类型，它有两种情况，`Some` 或者 `None`。
 
@@ -800,6 +842,7 @@ getNestedPrice({item: {price: 9.99}}) // Some(9.99)
 [示例 maybe.js](https://github.com/shfshanyue/fp-jargon-zh/blob/master/demos/maybe.js)
 
 <div id="functional-programing-libraries-in-javascript"></div>
+
 ## 在 js 中的函数式编程库
 
 + [mori](https://github.com/swannodette/mori)
