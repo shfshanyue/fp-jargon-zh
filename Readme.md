@@ -32,7 +32,7 @@
 * [Guarded Functions](#guarded-functions)
 * [范畴 (Category)](#category)
 * [值 (Value)](#value)
-* [常亮 (Constant)](#constant)
+* [常量 (Constant)](#constant)
 * [函子 (Functor)](#functor)
   * [一致性 (Preserves identity)](#preserves-identity)
   * [组合性 (Composable)](#composable)
