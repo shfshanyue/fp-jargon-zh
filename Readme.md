@@ -260,7 +260,7 @@ console.log('IO is a side effect!')
 
 [示例](https://github.com/shfshanyue/fp-jargon-zh/blob/master/demos/sideEffect.js)
 
-<div id="idemponent"></div>
+<div id="idempotent"></div>
 
 ## 幂等性 (Idempotent)
 如果一个函数执行多次皆返回相同的结果，则它是幂等性的。
