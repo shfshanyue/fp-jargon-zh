@@ -28,7 +28,7 @@
 * [幂等性 (Idempotent)](#idempotent)
 * [Point-Free 风格 (Point-Free Style)](#point-free-style)
 * [谓词 (Predicate)](#predicate)
-* [契约 (Contracts](#contracts)
+* [契约 (Contracts)](#contracts)
 * [Guarded Functions](#guarded-functions)
 * [范畴 (Category)](#category)
 * [值 (Value)](#value)
