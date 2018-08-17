@@ -17,7 +17,7 @@
 **目录**
 
 * [Arity](#arity)
-* [高阶组件 (HOF)](#higher-order-functions-hof)
+* [高阶函数 (HOF)](#higher-order-functions-hof)
 * [偏函数应用 (Partial Application)](#partial-application)
 * [柯里化 (Currying)](#currying)
 * [自动柯里化 (Auto Currying)](#auto-currying)
