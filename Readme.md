@@ -288,7 +288,7 @@ sort(sort(sort([2, 1])))
 const map = (fn) => (list) => list.map(fn)
 const add = (a) => (b) => a + b
 
-# Points-Free   list 是显式参数
+# Not Points-Free   list 是显式参数
 const incrementAll = (numbers) => map(add(1))(numbers)
 
 # Points-Free   list 是隐式参数
@@ -315,7 +315,7 @@ const predicate = (a) => a > 2
 
 [示例](https://github.com/shfshanyue/fp-jargon-zh/blob/master/demos/predicate.js)
 
-<div id="contract"></div>
+<div id="contracts"></div>
 
 ## 契约 (Contracts)
 契约保证了函数或者表达式在运行时的行为。当违反契约时，将抛出一个错误。
