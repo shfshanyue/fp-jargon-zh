@@ -8,16 +8,17 @@
 
 函数式编程有许多优势，由此越来越受欢迎。然而每个编程范式 (paradigm) 都有自己唯一的术语，函数式编程也不例外。我们提供一张术语表，希望使你学习函数式编程变得容易些。
 
-示例均为 javascript (ES2015)。[Why javascript](https://github.com/hemanth/functional-programming-jargon/wiki/Why-JavaScript%3F)
+示例均为 javascript (ES2015)。[为什么使用JavaScript?](https://github.com/hemanth/functional-programming-jargon/wiki/Why-JavaScript%3F)
 
 *尚在 WIP 阶段，欢迎 pr。*
 
-如有可能，本篇文档术语由 [Fantasy Land spec](https://github.com/fantasyland/fantasy-land) 定义。
+如果适用，本篇文档使用定义在 [Fantasy Land spec](https://github.com/fantasyland/fantasy-land) 中的术语。
 
 **目录**
 
 * [Arity](#arity)
 * [高阶组件 (HOF)](#higher-order-functions-hof)
+* [闭包 (Closure)](#closure)
 * [偏函数应用 (Partial Application)](#partial-application)
 * [柯里化 (Currying)](#currying)
 * [自动柯里化 (Auto Currying)](#auto-currying)
@@ -63,13 +64,15 @@
 <div id="arity"></div>
 
 ## Arity
-函数参数的个数。来自于单词 unary, binary, ternary 等等。这个单词是由 -ary 与 -ity 两个后缀拼接而成。例如，一个带有两个参数的函数被称为二元函数或者它的 arity 是2。它也被那些更喜欢希腊词根而非拉丁词根的人称为 `dyadic`。同样地，带有可变数量参数的函数被称为 `variadic`，而二元函数只能带两个参数。
+函数参数的个数。来自于单词 unary(一元), binary(二元), ternary(三元) 等等。这个单词是由 -ary 与 -ity 两个后缀拼接而成。例如，加法函数有两个参数，因此它被定义为二元函数(`binary function`)，或者说它的 `arity` 是2。它也被那些更喜欢希腊词根而非拉丁词根的人称为 `dyadic`。同样地，带有可变数量的参数的函数被称为 `variadic`，而二元函数只能且必须带两个参数，尽管有柯里化(currying)和偏函数应用(partial application)的存在(见下文)。
 
 ``` js
 const sum = (a, b) => a + b
 
 const arity = sum.length
 console.log(arity)        // 2
+
+// 函数sum的arity为2。
 ```
 
 [示例](https://github.com/shfshanyue/fp-jargon-zh/blob/master/demos/arity.js)
@@ -77,7 +80,7 @@ console.log(arity)        // 2
 <div id="higher-order-functions-hof"></div>
 
 ## 高阶函数 (Higher-Order Function / HOF)
-以函数为参数或/和返回值。
+以函数为参数或/和返回值的函数。
 
 ``` js
 const filter = (predicate, xs) => xs.filter(predicate)
@@ -88,6 +91,31 @@ filter(is(Number), [0, '1', 2, null]) // 0, 2
 ```
 
 [示例](https://github.com/shfshanyue/fp-jargon-zh/blob/master/demos/hoc.js)
+
+<div id="closure"></div>
+
+## 闭包 (Closure)
+闭包是访问在其作用域外的变量的一种方式。正式地说，闭包是一种用于实现词法作用域命名绑定的技术。它是存储一个函数和它的环境的一种方法。
+
+闭包是一个作用域，它会捕获函数的局部变量，因此即使执行过程已经移出了定义它的那个代码块，也可以访问它们。也就是说，它们允许在声明变量的代码块已经执行完成之后，还是可以引用这个作用域。
+
+```js
+const addTo = x => y => x + y;
+var addToFive = addTo(5);
+addToFive(3); //返回 8
+```
+
+函数`addTo()`返回了一个函数(在内部调用了`add()`)，我们将它保存在了一个叫做`addToFive`的变量中，并且柯里化地用一个参数5来调用它。
+
+理想情况下，当函数`addTo`执行完成后，它的作用域，包括本地变量add(即+)，x，y，都应该无法访问了。但是，`addToFive()`的调用返回了8。这说明，`addTo`函数的状态被保存了，即使在代码块已经完成执行之后。否则，就不会知道`addTo`曾经被`addTo(5)`这样调用过，且x的值被设为了5。
+
+词法作用域(lexical scoping)是它能找到x和add这两个已经完成执行的父级私有变量的原因。这个值就称为闭包。
+
+栈和函数的词法作用域被以父函数的引用的形式存储。这可以防止闭包和底层的变量被垃圾回收(因为至少有一个对它的有效引用)。
+
+Lambda Vs 闭包：Lambda本质上是一个内联定义的函数，而不是声明函数的标准方法。Lambda经常可以作为对象被传递。
+
+闭包是通过引用其主体外部的字段来将其周围的状态包裹进来的函数。被包裹的状态在闭包调用期间保持不变。
 
 <div id="partical-application"></div>
 
