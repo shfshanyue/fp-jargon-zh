@@ -120,7 +120,7 @@ Lambda Vs 闭包：Lambda本质上是一个内联定义的函数，而不是声�
 <div id="partical-application"></div>
 
 ## 偏函数 (Partial Function)
-对原始函数预设参数作为一个新的函数。
+预设原始函数的一些参数来创建一个新的函数。
 
 ``` js
 // 创建偏函数，固定一些参数
@@ -130,10 +130,9 @@ const partical = (f, ...args) =>
     // 调用原始函数
     f(...args, ...moreArgs)
 
-const add3 = (a, b, c) => a + b + c
+const add3 = (a, b, c) => a + b + c // (c) => 2 + 3 + c
 
-// (...args) => add3(2, 3, ...args)
-// (c) => 2 + 3 + c
+// 部分地将`2`和`3`应用于`add3`，得到一个只有一个参数的函数
 const fivePlus = partical(add3, 2, 3)
 
 fivePlus(4)  // 9
@@ -142,10 +141,10 @@ fivePlus(4)  // 9
 也可以使用 `Function.prototype.bind` 实现偏函数。
 
 ``` js
-const add1More = add3.bind(null, 2, 3)
+const add1More = add3.bind(null, 2, 3) // (c) => 2 + 3 + c
 ```
 
-偏函数应用通过对复杂的函数填充一部分数据来构成一个简单的函数。柯里化通过偏函数实现。
+偏函数应用通过对复杂的函数填充一部分数据来构成一个简单的函数。柯里化就是自动实现的偏函数。
 
 [示例](https://github.com/shfshanyue/fp-jargon-zh/blob/master/demos/partial.js)
 
@@ -172,7 +171,9 @@ add2(10)     // 12
 <div id="auto-currying"></div>
 
 ## 自动柯里化 (Auto Currying)
-`lodash`，`understore` 和 `ramda` 有 `curry` 函数可以自动完成柯里化。
+将一个包含多个参数的函数转换成另一个函数，这个函数如果被给到的参数少于正确的数量，就会返回一个接受剩余参数的函数。
+
+lodash & Ramda 有一个`curry`函数可以做到这一点。
 
 ``` js
 const add = (x, y) => x + y
@@ -193,7 +194,7 @@ curriedAdd(1)      // (y) => 1 + y
 <div id="function-composition"></div>
 
 ## 函数组合 (Function Composing) 
-接收多个函数作为参数，从右到左，一个函数的输入为另一个函数的输出。
+把两个函数放在一起形成第三个函数的行为，一个函数的输入为另一个函数的输出。
 
 ``` js
 const compose = (f, g) => (a) => f(g(a))    // 定义
