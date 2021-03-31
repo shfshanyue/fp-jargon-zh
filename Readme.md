@@ -23,7 +23,7 @@
 * [柯里化 (Currying)](#currying)
 * [自动柯里化 (Auto Currying)](#auto-currying)
 * [函数组合 (Function Composition)](#function-composition)
-* [Continuation](#continuation)
+* [Continuation (后续)](#continuation)
 * [纯函数 (Purity)](#purity)
 * [副作用 (Side effects)](#side-effects)
 * [幂等性 (Idempotent)](#idempotent)
@@ -193,7 +193,7 @@ curriedAdd(1)      // (y) => 1 + y
 
 <div id="function-composition"></div>
 
-## 函数组合 (Function Composing) 
+## 函数组合 (Function Composition) 
 把两个函数放在一起形成第三个函数的行为，一个函数的输入为另一个函数的输出。
 
 ``` js
@@ -206,7 +206,7 @@ floorAndToString(12.12)   // '12'
 
 <div id="continuation"></div>
 
-## Continuation
+## Continuation (后续)
 在一个程序执行的任意时刻，尚未执行的代码称为 Continuation。
 
 ``` js
@@ -257,7 +257,7 @@ const greet = () => `Hi, ${window.name}`
 greet() // "Hi, Brianne"
 ```
 
-以上示例中，函数依赖外部状态。
+以上示例中的输出基于在函数外部存储的数据。
 
 ``` js
 let greeting
