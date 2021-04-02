@@ -127,8 +127,8 @@ Lambda Vs 闭包：Lambda本质上是一个内联定义的函数，而不是声�
 
 <div id="partial-application"></div>
 
-## 偏函数 (Partial Application)
-预设原始函数的一些参数来创建一个新的函数。
+## 偏函数应用 (Partial Application)
+"部分地"应用一个函数，即预设原始函数的部分参数来创建一个新的函数。
 
 ``` js
 // 创建偏函数，固定一些参数
