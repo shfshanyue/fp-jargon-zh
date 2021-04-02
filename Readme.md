@@ -41,7 +41,7 @@
 * [引用透明性 (Referential Transparency)](#referential-transparency)
 * [等式推理 (Equational Reasoning)](#equational-reasoning)
 * [Lambda](#lambda)
-* [Lambda 积分 (Lambda Calculus)](#lambda-calculus)
+* [Lambda 演算 (Lambda Calculus)](#lambda-calculus)
 * [惰性求值 (Lazy evaluation)](#lazy-evaluation)
 * [幺半群 (Monoid)](#monoid)
 * [单子 (Monad)](#monad)
@@ -541,7 +541,7 @@ const add1 = (a) => a + 1
 
 <div id="lambda-calculus"></div>
 
-## Lambda积分 (Lambda Calculus)
+## Lambda演算 (Lambda Calculus)
 数学的一个分支，使用函数创造 [通用计算模型](https://en.wikipedia.org/wiki/Lambda_calculus)
 
 <div id="lazy-evaluation"></div>
