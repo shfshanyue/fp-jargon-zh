@@ -46,7 +46,7 @@
 * [幺半群 (Monoid)](#monoid)
 * [单子 (Monad)](#monad)
 * [余单子 (Comonad)](#comonad)
-* [可应用函子 (Applicative Functor)](#applicative-functor)
+* [应用函子 (Applicative Functor)](#applicative-functor)
 * [态射 (Morphism)](#morphism)
   * [Endomorphism (自同态)](#endomorphism)
   * [Isomorphism (同构)](#isomorphism)
@@ -474,7 +474,7 @@ Array.of(1)
 <div id="lift"></div>
 
 ## 抬升 (Lift)
-抬升是指将一个值放进一个对象（如[函子](#functor)）中。如果你将一个函数抬升到一个[可应用函子](#applicative-functor)中，那么就可以将它作用于该函子中的值。
+抬升是指将一个值放进一个对象（如[函子](#functor)）中。如果你将一个函数抬升到一个[应用函子](#applicative-functor)中，那么就可以将它作用于该函子中的值。
 
 ``` js
 const liftA2 = (f) => (a, b) => a.map(f).ap(b) // 注意这里是 ap 而不是 map.
@@ -663,8 +663,8 @@ CoIdentity(1).extend(x => x.extract() + 1) // CoIdentity(2)
 
 <div id="applicative-functor"></div>
 
-## 可应用函子 (Applicative Functor)
-一个拥有 `ap` 函数的对象称为可应用函子。`ap` 将对象中的函数应用于另一个同样类型的对象中的值。
+## 应用函子 (Applicative Functor)
+一个拥有 `ap` 函数的对象称为应用函子。`ap` 将对象中的函数应用于另一个同样类型的对象中的值。
 
 ``` js
 // 实现
@@ -702,7 +702,7 @@ partiallyAppliedAdds.ap(arg2) // [5, 6, 7, 8]
 ## 态射 (Morphism)
 一个变形函数。
 
-<div id="endomophism"></div>
+<div id="endomorphism"></div>
 
 ### Endomorphism (自同态)
 输入输出是相同类型的函数。
@@ -992,7 +992,7 @@ const point = (x, y) => ({x: x, y: y})
 
 <div id="option"></div>
 
-## Option
+## 可选类型 (Option)
 Option 是一种联合类型，它有两种情况，`Some` 或者 `None`。
 
 Option对于一些可能不会返回值的组合函数非常有用。
