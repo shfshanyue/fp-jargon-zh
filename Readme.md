@@ -907,7 +907,7 @@ const people = [{name: 'Gertrude Blanch'}, {name: 'Shafi Goldwasser'}]
 R.over(compose(firstLens, nameLens), uppercase, people) // [{'name': 'GERTRUDE BLANCH'}, {'name': 'Shafi Goldwasser'}]
 ```
 
-其他市县:
+其他实现:
 
 [partial.lenses](https://github.com/calmm-js/partial.lenses) - "好吃"的语法糖和很多强大功能
 
