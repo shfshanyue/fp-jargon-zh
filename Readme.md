@@ -647,7 +647,7 @@ const CoIdentity = (v) => ({
 })
 ```
 
-Extract 将值从函子中取出。
+Extract 将值从余单子中取出。
 
 ``` js
 CoIdentity(1).extract() // 1
