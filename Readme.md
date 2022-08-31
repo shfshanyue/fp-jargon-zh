@@ -300,7 +300,12 @@ console.log('IO就是一种副作用!')
 <div id="idempotent"></div>
 
 ## 幂等 (Idempotent)
+<!--
+Original:
+A function is idempotent if reapplying it to its result does not produce a different result.
 如果一个函数执行多次皆返回相同的结果，则它是幂等的。
+-->
+如果一个函数对其执行结果重复执行后返回相同的结果，则它是幂等的。
 
 ``` js
 f(f(x)) ≍ f(x)
