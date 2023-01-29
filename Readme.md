@@ -132,7 +132,7 @@ Lambda Vs 闭包：Lambda本质上是一个内联定义的函数，而不是声�
 
 ``` js
 // 创建偏函数，固定一些参数
-const partical = (f, ...args) =>
+const partial = (f, ...args) =>
   // 返回一个带有剩余参数的函数
   (...moreArgs) =>
     // 调用原始函数
@@ -141,7 +141,7 @@ const partical = (f, ...args) =>
 const add3 = (a, b, c) => a + b + c // (c) => 2 + 3 + c
 
 // 部分地将`2`和`3`应用于`add3`，得到一个只有一个参数的函数
-const fivePlus = partical(add3, 2, 3)
+const fivePlus = partial(add3, 2, 3)
 
 fivePlus(4)  // 9
 ```
